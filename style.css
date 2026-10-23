@@ -20,3 +20,8 @@
 @media(min-width:600px){:root{--page:6%}.concert-menu{padding-left:var(--page);padding-right:var(--page)}.artist-grid{grid-template-columns:1fr 1fr;gap:0 32px}.artist-card{grid-template-columns:1fr;gap:10px}.ticket-inner{padding:48px 32px}.landing-poster{width:auto;height:calc(100svh - 146px);max-height:900px;max-width:100%;object-fit:contain}}
 @media(min-width:1000px){:root{--section-title:48px;--name:30px;--lead:24px}.header{height:88px}.concert-menu{max-height:calc(100dvh - 88px);padding-top:24px;padding-bottom:36px}.concert-menu a{font-size:26px;min-height:64px}.menu-backdrop{top:88px}.section{padding-top:96px;padding-bottom:96px}.section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:32px;margin-bottom:40px}.section-heading h2{margin:0}.program-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}.artist-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}.artist-card{align-content:start;border-bottom:0;padding:20px 0}.artists{padding-top:0}.about{display:grid;grid-template-columns:1fr 1fr;gap:8%;padding-top:0}.visit{display:grid;grid-template-columns:1fr 1fr;gap:8%;padding-top:0}.map-link{margin-bottom:0}.ticket{padding-bottom:80px}.ticket-inner{padding:56px 40px}footer{padding-bottom:40px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* Bilingual section headings share one accent and a consistent hierarchy. */
+h2 { color: var(--blue); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.heading-en { font-size: 18px; font-weight: 500; line-height: 1.5; letter-spacing: -.015em; }
+@media (min-width: 1000px) { .heading-en { font-size: 24px; } }
