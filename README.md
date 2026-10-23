@@ -19,3 +19,6 @@ GitHub 저장소 **Settings → Pages → Build and deployment → Source**를 *
 `main` 브랜치에 변경 사항을 push하면 `.github/workflows/pages.yml`이 웹사이트 파일만 배포합니다.
 첫 배포가 성공한 뒤 기본 주소는 `https://arterica5.github.io/hwr2026/`입니다.
 Actions 탭에서 실행 결과와 배포 주소를 확인할 수 있습니다.
+
+## 글꼴
+영문 글꼴 우선순위는 Samsung Sharp Sans → Arial입니다. Samsung Sharp Sans 웹폰트 파일은 아직 제공되지 않아 별도로 배포하지 않으며, 방문자 기기에 설치된 경우에만 사용됩니다. 한글은 Noto Sans KR 및 시스템 글꼴로 표시됩니다. 웹 사용이 허용된 파일을 받으면 로컬 `@font-face`로 연결할 수 있습니다.
