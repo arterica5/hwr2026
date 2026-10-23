@@ -44,3 +44,6 @@
 .summary-date strong { display: block; font-size: 30px; font-weight: 650; margin-top: 5px; }
 .concert-summary .venue-name { margin-bottom: 10px; }
 @media (min-width: 1000px) { .summary-date { font-size: 26px; } .summary-date strong { font-size: 36px; } }
+
+.sponsor { display: flex; align-items: center; gap: 16px; }
+.samsung-wordmark { display: block; width: 112px; height: auto; }
