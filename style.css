@@ -142,3 +142,23 @@ footer>a:last-child { display: inline-flex; min-height: 48px; align-items: cente
 .artist-card { display: grid; grid-template-columns: 60px minmax(0, 1fr); align-items: baseline; gap: 16px; }
 .artist-role, .artist-card h3 { margin: 0; }
 @media (min-width: 600px) { .artist-card { display: block; } .artist-role { margin-bottom: 10px; } }
+
+/* A persistent concert identity and accessible navigation at every viewport. */
+html { scroll-padding-top: 116px; }
+.header { position: sticky; top: 0; z-index: 30; min-height: 90px; height: 90px; background: var(--white); }
+.concert-brand { display: inline-flex; flex-direction: column; gap: 3px; min-width: 0; }
+.concert-brand strong { font-family: var(--display); font-size: 25px; font-weight: 800; line-height: 1.15; letter-spacing: -.05em; }
+.concert-brand>span { font-size: 16px; line-height: 1.5; letter-spacing: -.05em; }
+.menu-toggle { display: flex; position: relative; flex: 0 0 48px; width: 48px; height: 48px; padding: 12px; border: 1px solid var(--blue); background: var(--white); align-items: center; justify-content: center; }
+.menu-toggle>span { position: absolute; width: 22px; height: 2px; background: var(--blue); transition: transform .18s; }
+.menu-toggle>span:first-child { transform: translateY(-4px); }
+.menu-toggle>span:last-child { transform: translateY(4px); }
+.menu-toggle[aria-expanded="true"]>span:first-child { transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"]>span:last-child { transform: rotate(-45deg); }
+.header .concert-menu { display: flex; position: absolute; left: 0; right: 0; top: 100%; background: var(--white); border-bottom: 1px solid var(--blue); padding: 8px 20px 16px; flex-direction: column; gap: 0; max-height: calc(100dvh - 90px); overflow-y: auto; }
+.header .concert-menu[hidden], .menu-backdrop[hidden] { display: none; }
+.header .concert-menu a { min-height: 56px; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--blue); font-size: 18px; }
+.header .concert-menu a:last-child { border-bottom: 0; }
+.menu-backdrop { position: fixed; inset: 90px 0 0; z-index: 20; background: var(--blue); opacity: .2; }
+@media (min-width: 600px) { .header .concert-menu { padding-left: 6%; padding-right: 6%; } }
+@media (prefers-reduced-motion: reduce) { .menu-toggle>span { transition: none; } }
