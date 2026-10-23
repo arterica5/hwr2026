@@ -31,3 +31,10 @@
 @media (max-width: 359px) { .header-logo { width: 196px; } }
 
 .concert-brand>span { font-size: 14px; line-height: 1.5; letter-spacing: -.045em; }
+
+/* Open directly on the original poster; practical content follows the program. */
+.poster-landing { margin: 0; padding: 0; background: var(--blue); display: flex; flex-direction: column; align-items: center; }
+.landing-poster { display: block; width: 100%; height: auto; max-width: 560px; }
+.poster-scroll { display: flex; align-items: center; justify-content: center; gap: 24px; width: 100%; min-height: 58px; padding: 14px 24px; font-size: 16px; color: var(--white); background: var(--blue); }
+.poster-scroll:hover { text-decoration: underline; text-underline-offset: 5px; }
+@media (min-width: 600px) { .landing-poster { width: auto; height: calc(100svh - 146px); max-height: 900px; max-width: 100%; object-fit: contain; } }
