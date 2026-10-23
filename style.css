@@ -1,11 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+/* Pretendard v1.3.9 — SIL Open Font License, assets/fonts/OFL.txt */
+@font-face {
+  font-family: 'Pretendard Variable';
+  src: url('assets/fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --blue: #03329C;
   --red: #FF453A;
   --white: #FFFFFF;
-  --body: 'Samsung Sharp Sans', 'Noto Sans KR', Arial, sans-serif;
-  --display: 'Samsung Sharp Sans', Arial, sans-serif;
+  --body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --display: var(--body);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 24px; }
