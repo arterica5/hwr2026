@@ -38,3 +38,9 @@
 .poster-scroll { display: flex; align-items: center; justify-content: center; gap: 24px; width: 100%; min-height: 58px; padding: 14px 24px; font-size: 16px; color: var(--white); background: var(--blue); }
 .poster-scroll:hover { text-decoration: underline; text-underline-offset: 5px; }
 @media (min-width: 600px) { .landing-poster { width: auto; height: calc(100svh - 146px); max-height: 900px; max-width: 100%; object-fit: contain; } }
+
+.concert-summary { padding-top: 4px; }
+.summary-date { margin: 0 0 28px; font-size: 23px; font-weight: 600; letter-spacing: -.035em; line-height: 1.5; }
+.summary-date strong { display: block; font-size: 30px; font-weight: 650; margin-top: 5px; }
+.concert-summary .venue-name { margin-bottom: 10px; }
+@media (min-width: 1000px) { .summary-date { font-size: 26px; } .summary-date strong { font-size: 36px; } }
