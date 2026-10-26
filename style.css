@@ -72,3 +72,6 @@ h2 { gap: 6px 12px; }
  .landing-date strong { display: inline; font-size: 24px; margin-left: 12px; }
  .landing-venue strong { font-size: 24px; }
 }
+
+.landing-concert-name { margin: 0 0 20px; color: var(--white); font-size: 16px; font-weight: 500; line-height: 1.6; text-align: center; letter-spacing: -.025em; }
+@media (min-width: 1000px) { .landing-concert-name { font-size: 18px; margin-bottom: 24px; } }
