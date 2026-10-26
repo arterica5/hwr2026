@@ -51,3 +51,9 @@ html { scroll-padding-top: calc(var(--header-height) + 24px); }
  .landing-logo { width: min(100%, 180px); height: auto; max-height: none; }
 }
 @media (min-width: 1000px) { :root { --header-height: 88px; } }
+
+/* Avoid repeating the identity until the visitor starts scrolling. */
+.header .concert-brand { transition: opacity .22s ease, transform .22s ease; }
+html.has-scroll-brand .header .concert-brand { opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-4px); }
+html.has-scroll-brand .header.is-scrolled .concert-brand,
+html.has-scroll-brand .header.is-menu-open .concert-brand { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }

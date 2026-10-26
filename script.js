@@ -4,6 +4,7 @@ const menuBackdrop = document.querySelector('.menu-backdrop');
 function setMenuOpen(open, restoreFocus = false) {
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  document.querySelector('.header').classList.toggle('is-menu-open', open);
   concertMenu.hidden = !open;
   menuBackdrop.hidden = !open;
   if (restoreFocus) menuToggle.focus({ preventScroll: true });
@@ -62,3 +63,23 @@ function syncHeaderHeight() {
 syncHeaderHeight();
 if ('ResizeObserver' in window) new ResizeObserver(syncHeaderHeight).observe(siteHeader);
 else window.addEventListener('resize', syncHeaderHeight);
+
+
+// Keep the opening poster uncluttered; show the header identity after scrolling.
+const headerBrand = document.querySelector('.header .concert-brand');
+function syncScrollBrand() {
+  const visible = window.scrollY > 32 || menuToggle.getAttribute('aria-expanded') === 'true';
+  siteHeader.classList.toggle('is-scrolled', window.scrollY > 32);
+  if (visible) {
+    headerBrand.removeAttribute('aria-hidden');
+    headerBrand.removeAttribute('tabindex');
+  } else {
+    headerBrand.setAttribute('aria-hidden', 'true');
+    headerBrand.setAttribute('tabindex', '-1');
+  }
+}
+window.addEventListener('scroll', syncScrollBrand, { passive: true });
+window.addEventListener('pageshow', syncScrollBrand);
+menuToggle.addEventListener('click', syncScrollBrand);
+new MutationObserver(syncScrollBrand).observe(menuToggle, { attributes: true, attributeFilter: ['aria-expanded'] });
+syncScrollBrand();
