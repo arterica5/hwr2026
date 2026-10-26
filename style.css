@@ -57,3 +57,11 @@ html { scroll-padding-top: calc(var(--header-height) + 24px); }
 html.has-scroll-brand .header .concert-brand { opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-4px); }
 html.has-scroll-brand .header.is-scrolled .concert-brand,
 html.has-scroll-brand .header.is-menu-open .concert-brand { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+
+/* Let the opening poster reach the top edge; the white navigation returns on scroll. */
+html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) {
+ background: var(--blue);
+ border-bottom-color: transparent;
+ backdrop-filter: none;
+}
+html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle > span { background: var(--white); }
