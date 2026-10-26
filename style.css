@@ -1,160 +1,27 @@
-
-/* Samsung Sharp Sans supplied by the user; Korean falls back to Pretendard. */
-@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans-medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans-bold.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
-/* Pretendard v1.3.9 — SIL Open Font License, assets/fonts/OFL.txt */
-@font-face{font-family:'Pretendard Variable';src:url('assets/fonts/PretendardVariable.woff2') format('woff2');font-weight:45 920;font-style:normal;font-display:swap}
-:root{
- --blue:#03329C;--red:#FF453A;--white:#FFFFFF;
- --heading:#1d1d1f;--text:#424245;--secondary:#6e6e73;--line:#e5e5e7;
- --body:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
- --page:24px;--section-title:34px;--name:26px;--lead:22px;--body-size:16px;
-}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:104px}body{margin:0;background:var(--white);color:var(--text);font:400 var(--body-size)/1.75 var(--body);-webkit-text-size-adjust:100%}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:5px}::selection{background:var(--blue);color:var(--white)}p{margin:0 0 20px}h1,h2,h3{margin:0;color:var(--heading);font-weight:650;letter-spacing:-.04em;line-height:1.3;overflow-wrap:anywhere}h2{font-size:var(--section-title)}h3{font-size:var(--name)}.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
-/* Concert identity is the only small type; reading content starts at 16px. */
-.header{height:80px;position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--page);background:rgb(255 255 255 / .94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.concert-brand{display:flex;flex-direction:column;gap:3px;min-width:0}.header-logo{display:block;width:210px;max-width:100%;height:auto}.concert-brand>span{font-size:14px;line-height:1.5;letter-spacing:-.025em;color:var(--secondary)}.menu-toggle{position:relative;display:flex;align-items:center;justify-content:center;width:48px;height:48px;flex:0 0 48px;border:0;border-radius:50%;background:transparent}.menu-toggle>span{position:absolute;width:21px;height:2px;background:var(--heading);transition:transform .25s}.menu-toggle>span:first-child{transform:translateY(-4px)}.menu-toggle>span:last-child{transform:translateY(4px)}.menu-toggle[aria-expanded="true"]>span:first-child{transform:rotate(45deg)}.menu-toggle[aria-expanded="true"]>span:last-child{transform:rotate(-45deg)}.concert-menu{position:absolute;left:0;right:0;top:100%;display:flex;flex-direction:column;padding:12px var(--page) 28px;max-height:calc(100dvh - 80px);overflow:auto;background:var(--white);border-radius:0 0 24px 24px;box-shadow:0 16px 40px rgb(0 0 0 / .1)}.concert-menu a{display:flex;justify-content:space-between;align-items:center;min-height:58px;padding:12px 0;color:var(--heading);font-size:22px;font-weight:500;letter-spacing:-.025em}.concert-menu a>span{font-size:18px;color:var(--secondary)}.concert-menu[hidden],.menu-backdrop[hidden]{display:none}.menu-backdrop{position:fixed;inset:80px 0 0;z-index:20;background:rgb(0 0 0 / .2);backdrop-filter:blur(8px)}
-/* The official artwork retains its original brand palette. */
-.poster-landing{margin:0;padding:0;background:var(--blue);display:flex;flex-direction:column;align-items:center}.landing-poster{display:block;width:100%;height:auto;max-width:560px}.poster-scroll{display:flex;align-items:center;justify-content:center;gap:24px;width:100%;min-height:58px;padding:14px var(--page);font-size:16px;color:var(--white);background:var(--blue)}.poster-scroll:hover{text-decoration:underline;text-underline-offset:5px}
-/* One type scale and a shared horizontal grid across every content section. */
-.section{padding:72px var(--page);max-width:1280px;margin:0 auto}.section-heading{margin-bottom:32px}.section-heading h2{margin-bottom:12px}.section-heading>p{font-size:16px;line-height:1.75;margin:0;color:var(--secondary)}.program-grid{display:grid;gap:24px}.program-group{min-width:0;border-radius:24px;padding:8px 24px;background:var(--white);box-shadow:0 4px 28px rgb(0 0 0 / .045),0 0 0 1px rgb(0 0 0 / .04)}.program-group ul{list-style:none;margin:0;padding:0}.program-group li{padding:20px 0;border-bottom:1px solid var(--line)}.program-group li:last-child{border:0}.program-group li>span{display:block;font-size:18px;line-height:1.5;font-weight:550;letter-spacing:-.02em;color:var(--heading);overflow-wrap:anywhere}.program-group small{display:block;font-size:16px;line-height:1.75;margin-top:4px;font-weight:400;color:var(--secondary)}
-.visit{padding-top:0}.visit h2{margin-bottom:28px}.concert-summary{padding-top:0}.summary-date{margin:0 0 28px;font-size:var(--lead);font-weight:600;letter-spacing:-.03em;line-height:1.5;color:var(--heading)}.summary-date strong{display:block;font-size:var(--name);font-weight:650;line-height:1.3;margin-top:6px}.venue-name{font-size:var(--lead);line-height:1.5;letter-spacing:-.03em;font-weight:550;color:var(--heading);margin-bottom:12px}.muted{font-size:16px;line-height:1.75;color:var(--secondary)}.map-link{min-height:48px;display:inline-flex;align-items:center;font-size:16px;padding:10px 0;margin-bottom:32px;color:var(--blue)}.map-link:hover{text-decoration:underline;text-underline-offset:5px}.visit-details{border-radius:24px;padding:4px 24px;background:var(--white);box-shadow:0 4px 28px rgb(0 0 0 / .045),0 0 0 1px rgb(0 0 0 / .04)}dl{margin:0}dl>div{padding:23px 0;border-bottom:1px solid var(--line)}dl>div:last-child{border:0}dt{font-size:18px;font-weight:600;line-height:1.5;color:var(--heading);margin-bottom:8px}dd{font-size:16px;line-height:1.9;margin:0;color:var(--text)}dd strong{white-space:nowrap;margin-left:8px;font-weight:600;color:var(--heading)}
-.artists{padding-top:0}.artist-grid{display:grid;gap:0}.artist-card{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:baseline;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}.artist-role{font-size:16px;line-height:1.75;margin:0;color:var(--secondary)}.artist-card h3{font-size:var(--name);line-height:1.3}.about{padding-top:0}.about h2{font-size:var(--section-title);line-height:1.3;margin-bottom:32px}.about-copy .lead{font-size:var(--lead);line-height:1.5;font-weight:550;letter-spacing:-.03em;color:var(--heading)}.about-copy p{font-size:16px;line-height:1.9;letter-spacing:-.01em;color:var(--text)}.social-links{display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:28px}.social-links a{display:inline-flex;align-items:center;min-height:48px;font-size:16px;color:var(--blue)}.social-links a:hover{text-decoration:underline;text-underline-offset:5px}
-.ticket{padding:0 var(--page) 72px;text-align:left}.ticket-inner{padding:32px 24px;border-radius:28px;max-width:1136px;margin:auto;background:var(--white);box-shadow:0 4px 28px rgb(0 0 0 / .045),0 0 0 1px rgb(0 0 0 / .04)}.ticket h2{font-size:var(--section-title);margin-bottom:20px}.ticket p{font-size:16px;line-height:1.75;color:var(--text)}.button{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:52px;font-size:16px;font-weight:500;padding:14px 22px;background:var(--blue);color:var(--white);border:0;border-radius:999px}.button:hover{box-shadow:0 0 0 4px rgb(3 50 156 / .1)}.ticket-note{margin:24px 0 0;color:var(--secondary)!important}.brand{font-size:16px;font-weight:600;color:var(--heading)}footer{max-width:1280px;margin:auto;padding:0 var(--page) 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}footer>div{flex-basis:100%;order:3;padding-top:24px;border-top:1px solid var(--line)}footer p{font-size:16px;line-height:1.75;margin:0 0 8px;color:var(--secondary)}footer>a:last-child{display:inline-flex;align-items:center;min-height:48px;color:var(--secondary)}.sponsor{display:flex;align-items:center;gap:16px}.samsung-wordmark{display:block;width:112px;height:auto}
-@media(max-width:359px){.header-logo{width:196px}}
-@media(min-width:600px){:root{--page:6%}.concert-menu{padding-left:var(--page);padding-right:var(--page)}.artist-grid{grid-template-columns:1fr 1fr;gap:0 32px}.artist-card{grid-template-columns:1fr;gap:10px}.ticket-inner{padding:48px 32px}.landing-poster{width:auto;height:calc(100svh - 146px);max-height:900px;max-width:100%;object-fit:contain}}
-@media(min-width:1000px){:root{--section-title:48px;--name:30px;--lead:24px}.header{height:88px}.concert-menu{max-height:calc(100dvh - 88px);padding-top:24px;padding-bottom:36px}.concert-menu a{font-size:26px;min-height:64px}.menu-backdrop{top:88px}.section{padding-top:96px;padding-bottom:96px}.section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:32px;margin-bottom:40px}.section-heading h2{margin:0}.program-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}.artist-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}.artist-card{align-content:start;border-bottom:0;padding:20px 0}.artists{padding-top:0}.about{display:grid;grid-template-columns:1fr 1fr;gap:8%;padding-top:0}.visit{display:grid;grid-template-columns:1fr 1fr;gap:8%;padding-top:0}.map-link{margin-bottom:0}.ticket{padding-bottom:80px}.ticket-inner{padding:56px 40px}footer{padding-bottom:40px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
-
-/* Bilingual section headings share one accent and a consistent hierarchy. */
-h2 { color: var(--blue); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
-.heading-en { font-size: 18px; font-weight: 500; line-height: 1.5; letter-spacing: -.015em; }
-@media (min-width: 1000px) { .heading-en { font-size: 24px; } }
-
-:root{--title:'Samsung Sharp Sans','Pretendard Variable',Pretendard,sans-serif}
-h1,h2,h3,.heading-en,.program-group li>span,dt{font-family:var(--title)}
-h1,h2,h3{font-weight:700}
-.program-group li>span{font-weight:500}
-.heading-en{font-weight:500}
-
-/* Compact, English-first section titles. */
-:root { --section-title: 28px; }
-h2 { gap: 6px 12px; }
-.heading-en { font-size: inherit; font-weight: 700; line-height: inherit; }
-.heading-ko { font-family: var(--body); font-size: 18px; font-weight: 500; line-height: 1.5; letter-spacing: -.025em; }
-@media (min-width: 1000px) { :root { --section-title: 36px; } .heading-ko { font-size: 22px; } }
-
-/* Give the first content heading breathing room below the poster. */
-#visit { padding-top: 56px; }
-@media (min-width: 1000px) { #visit { padding-top: 80px; } }
-
-/* A compact opening: original central artwork, live date and venue. */
-.poster-landing { padding: 28px 24px 12px; }
-.landing-logo { display: block; width: auto; max-width: 100%; height: clamp(180px, 30svh, 270px); object-fit: contain; }
-.landing-event { color: var(--white); text-align: center; margin-top: 20px; }
-.landing-date { margin: 0 0 14px; font-size: 20px; line-height: 1.5; font-weight: 500; letter-spacing: -.025em; }
-.landing-date strong { display: block; font-size: 26px; font-weight: 650; }
-.landing-venue { margin: 0; font-size: 16px; line-height: 1.6; }
-.landing-venue strong { display: block; font-size: 21px; font-weight: 600; letter-spacing: -.025em; }
-.poster-scroll { width: auto; margin-top: 8px; }
-@media (max-height: 700px) and (max-width: 599px) {
- .poster-landing { padding-top: 20px; }
- .landing-logo { height: 145px; }
- .landing-event { margin-top: 14px; }
- .landing-date { font-size: 18px; margin-bottom: 10px; }
- .landing-date strong { font-size: 23px; }
- .landing-venue strong { font-size: 20px; }
-}
-@media (min-width: 1000px) {
- .poster-landing { padding-top: 36px; padding-bottom: 20px; }
- .landing-logo { height: 290px; }
- .landing-date { font-size: 24px; }
- .landing-date strong { display: inline; font-size: 24px; margin-left: 12px; }
- .landing-venue strong { font-size: 24px; }
-}
-
-.landing-concert-name { margin: 0 0 20px; color: var(--white); font-size: 16px; font-weight: 500; line-height: 1.6; text-align: center; letter-spacing: -.025em; }
-@media (min-width: 1000px) { .landing-concert-name { font-size: 18px; margin-bottom: 24px; } }
-
-@media (min-width: 1000px) { .artist-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-
-/* HEAR / WE / GO: three open chapters, without card chrome. */
-.program-grid { gap: 52px; }
-.program-group { padding: 0; border-radius: 0; box-shadow: none; background: transparent; }
-.stage-heading { margin-bottom: 26px; }
-.stage-number { display: block; margin-bottom: 12px; color: var(--secondary); font-size: 16px; line-height: 1.5; font-weight: 500; }
-.stage-title { font-family: var(--title); color: var(--blue); font-size: 52px; font-weight: 700; line-height: 1.05; letter-spacing: -.04em; }
-.stage-subtitle { margin: 12px 0 0; color: var(--secondary); font-size: 18px; line-height: 1.5; font-weight: 400; letter-spacing: -.015em; }
-.program-group li { padding: 0; border: 0; margin: 0 0 24px; }
-.program-group li:last-child { margin-bottom: 0; }
-.program-group small { margin-top: 5px; }
-@media (min-width: 1000px) { .program-grid { gap: 40px; } .stage-title { font-size: 60px; } .stage-heading { margin-bottom: 32px; } }
-
-/* Align the artwork edge, rather than its former padded SVG canvas. */
-.concert-brand { align-items: flex-start; gap: 7px; }
-.header-logo { margin: 0; padding: 0; }
-.concert-brand>span { display: block; margin: 0; padding: 0; }
-
-.mobile-ticket { padding-top: 0; }
-.mobile-ticket-intro { color: var(--text); font-size: 16px; line-height: 1.9; margin: 0 0 24px; }
-.mobile-ticket-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
-.ticket-download { min-height: 52px; }
-.ticket-view, .ticket-shortcut { display: inline-flex; align-items: center; min-height: 48px; color: var(--blue); font-size: 16px; }
-.ticket-view:hover, .ticket-shortcut:hover { text-decoration: underline; text-underline-offset: 5px; }
-.ticket-shortcut { display: flex; width: fit-content; margin-bottom: 28px; }
-.mobile-ticket-note { margin: 20px 0 0; color: var(--secondary); font-size: 16px; line-height: 1.75; }
-@media (max-width: 599px) { .ticket-download { width: 100%; } }
-
-/* Full-width alternating chapters. Space replaces content cards. */
-.section { width: 100%; max-width: none; margin: 0; padding: 64px 24px; }
-.section-inner, .ticket-inner { width: 100%; max-width: 1136px; margin: 0 auto; }
-#visit { padding-top: 64px; }
-.visit, .about { display: block; }
-.program-group, .visit-details, .ticket-inner { border: 0; border-radius: 0; box-shadow: none; background: transparent; }
-.visit-details { padding: 0; }
-.visit .section-inner { display: grid; gap: 32px; }
-.about .section-inner { display: grid; gap: 8px; }
-.program { background: var(--blue); color: var(--white); }
-.program h2, .program .stage-title, .program .program-group li>span { color: var(--white); }
-.program .section-heading>p, .program .stage-number, .program .stage-subtitle, .program .program-group small { color: rgb(255 255 255 / .85); }
-.program-grid { gap: 56px; }
-.program-group { padding: 0; }
-.program .stage-number { margin-bottom: 12px; }
-.program .stage-heading { margin-bottom: 30px; }
-.program .program-group li { margin-bottom: 26px; }
-.artists { background: var(--white); }
-.artist-card { padding: 28px 0; }
-.about { background: var(--blue); color: var(--white); }
-.about h2, .about .about-copy .lead { color: var(--white); }
-.about .about-copy p { color: rgb(255 255 255 / .9); }
-.about .social-links a { color: var(--white); }
-.about .social-links a:hover { text-decoration: underline; }
-.mobile-ticket { background: var(--white); }
-.ticket { padding: 64px 24px; background: var(--blue); color: var(--white); }
-.ticket-inner { padding: 0; }
-.ticket h2, .ticket p { color: var(--white); }
-.ticket .button { color: var(--blue); background: var(--white); }
-.ticket .button:hover { box-shadow: none; text-decoration: underline; text-underline-offset: 4px; }
-footer { padding-top: 36px; background: var(--white); }
-@media (min-width: 600px) {
- .section, .ticket { padding-left: 6%; padding-right: 6%; }
-}
-@media (min-width: 1000px) {
- .section, #visit, .ticket { padding-top: 96px; padding-bottom: 96px; }
- .visit .section-inner, .about .section-inner { grid-template-columns: 1fr 1fr; column-gap: 8%; align-items: start; }
- .about .section-inner { row-gap: 0; }
- .program-grid { gap: 56px; }
- .artist-card { padding-top: 12px; padding-bottom: 12px; }
-}
-#visit { background: var(--white); }
-
-/* One restrained icon style, aligned with labels and tap targets. */
-.ui-icon { display: inline-block; width: 20px; height: 20px; flex: 0 0 20px; vertical-align: middle; }
-.cta-label { display: inline-flex; align-items: center; gap: 10px; }
-.visit-details dt { display: flex; align-items: center; gap: 10px; }
-.stage-title { font-size: 40px; }
-@media (min-width: 1000px) { .stage-title { font-size: 48px; } }
-
+/* Fonts supplied by the user; Pretendard includes Korean glyphs. */
+@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans-medium.woff') format('woff');font-weight:500;font-display:swap}
+@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans-bold.woff') format('woff');font-weight:700;font-display:swap}
+@font-face{font-family:'Pretendard Variable';src:url('assets/fonts/PretendardVariable.woff2') format('woff2');font-weight:45 920;font-display:swap}
+:root{--blue:#03329C;--red:#FF453A;--white:#FFFFFF;--heading:#1d1d1f;--text:#424245;--secondary:#6e6e73;--line:#e5e5e7;--body:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;--title:'Samsung Sharp Sans','Pretendard Variable',sans-serif;--page:24px;--section-title:28px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:104px}body{margin:0;background:var(--white);color:var(--text);font:400 16px/1.75 var(--body);-webkit-text-size-adjust:100%}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:6px}::selection{background:var(--red);color:white}p{margin:0 0 20px}h1,h2,h3{margin:0;font-family:var(--title);font-weight:700;letter-spacing:-.04em;line-height:1.3;color:var(--heading);overflow-wrap:anywhere}h2{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:var(--section-title);color:var(--blue)}h3{font-size:26px}.heading-en{font-size:inherit}.heading-ko{font-family:var(--body);font-size:18px;font-weight:500;letter-spacing:-.025em}.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}.ui-icon{display:inline-block;width:20px;height:20px;flex:0 0 20px;vertical-align:middle}.cta-label{display:inline-flex;align-items:center;gap:10px}.button{display:inline-flex;justify-content:space-between;align-items:center;gap:22px;min-height:52px;padding:14px 22px;background:var(--blue);color:white;border:0;border-radius:0;font-size:16px;font-weight:500;transition:background .2s,color .2s}.button:hover{background:var(--red);color:white}
+/* Persistent identity, quiet until the menu opens. */
+.header{height:80px;position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--page);background:rgb(255 255 255 / .96);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.concert-brand{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0}.header-logo{display:block;width:210px;max-width:100%;height:auto}.concert-brand>span{display:block;color:var(--secondary);font-size:14px;line-height:1.5;letter-spacing:-.025em}.menu-toggle{position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 48px;width:48px;height:48px;border:0;background:transparent}.menu-toggle>span{position:absolute;width:22px;height:2px;background:var(--heading);transition:transform .2s}.menu-toggle>span:first-child{transform:translateY(-4px)}.menu-toggle>span:last-child{transform:translateY(4px)}.menu-toggle[aria-expanded=true]>span:first-child{transform:rotate(45deg)}.menu-toggle[aria-expanded=true]>span:last-child{transform:rotate(-45deg)}.concert-menu{position:absolute;left:0;right:0;top:100%;display:flex;flex-direction:column;padding:12px var(--page) 28px;max-height:calc(100dvh - 80px);overflow:auto;background:white;box-shadow:0 20px 40px rgb(0 0 0 / .1)}.concert-menu a{display:flex;align-items:center;justify-content:space-between;min-height:58px;padding:12px 0;font-size:22px;font-weight:500;color:var(--heading);letter-spacing:-.025em}.concert-menu a:hover{color:var(--blue)}.concert-menu a>span{color:var(--secondary);font-size:18px}.concert-menu[hidden],.menu-backdrop[hidden]{display:none}.menu-backdrop{position:fixed;inset:80px 0 0;z-index:20;background:rgb(0 0 0 / .22);backdrop-filter:blur(8px)}
+/* The opening is a living poster, rather than an image inside a page. */
+.poster-landing{position:relative;overflow:hidden;background:var(--blue);color:white;padding:28px var(--page) 0}.landing-inner{max-width:1136px;margin:auto;position:relative;z-index:1}.landing-concert-name{font-size:16px;text-align:center;margin:0 0 22px;line-height:1.6;font-weight:500}.landing-scene{display:grid;gap:22px}.landing-logo{display:block;width:auto;max-width:100%;height:clamp(210px,32svh,300px);object-fit:contain;margin:auto}.landing-invitation{display:none}.landing-event{text-align:center}.landing-date{font-family:var(--title);font-size:20px;line-height:1.5;margin:0 0 14px;font-weight:500;letter-spacing:-.025em}.landing-venue{font-size:16px;line-height:1.6;margin:0}.landing-venue strong{display:block;font-size:21px;font-weight:600;letter-spacing:-.025em}.landing-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 20px;margin-top:22px}.landing-ticket{color:var(--blue);background:white}.poster-scroll{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:52px;font-size:16px;padding:10px 0}.poster-scroll .ui-icon{display:none}.poster-scroll:hover{text-decoration:underline;text-underline-offset:5px}.hero-rhythm{height:34px;margin-top:34px;background:repeating-linear-gradient(to bottom,transparent 0 5px,rgb(255 255 255 / .22) 5px 6px);transform:translateX(28%);width:100%;pointer-events:none}
+/* A shared editorial grid keeps the quieter content aligned. */
+.section{padding:72px var(--page);width:100%}.section-inner,.ticket-inner{max-width:1136px;width:100%;margin:0 auto}.section-heading{margin-bottom:36px}.section-heading h2{margin-bottom:12px}.section-heading>p{font-size:16px;color:var(--secondary);margin:0}.visit .section-inner{display:grid;gap:36px}.visit h2{margin-bottom:32px}.summary-date{font-family:var(--title);font-size:24px;font-weight:700;line-height:1.45;letter-spacing:-.035em;color:var(--heading);margin-bottom:26px}.venue-name{font-size:23px;font-weight:550;line-height:1.5;letter-spacing:-.035em;color:var(--heading);margin-bottom:12px}.muted{font-size:16px;color:var(--secondary);margin-bottom:10px}.map-link,.ticket-shortcut{display:flex;align-items:center;width:fit-content;min-height:48px;color:var(--blue);font-size:16px;padding:8px 0}.map-link:hover,.ticket-shortcut:hover{text-decoration:underline;text-underline-offset:5px}.ticket-shortcut{margin-top:4px}.visit-details{padding:0;background:transparent;border:0;box-shadow:none}dl{margin:0}dl>div{padding:22px 0;border-top:1px solid var(--line)}dt{display:flex;align-items:center;gap:10px;font-size:18px;line-height:1.5;font-weight:600;color:var(--heading);margin-bottom:10px}dd{margin:0;font-size:16px;line-height:1.9}dd strong{font-weight:600;white-space:nowrap;margin-left:8px}
+/* Three musical chapters; each gets its own space and a measured reveal. */
+.program{position:relative;background:var(--blue);color:white;overflow:hidden}.program:before{content:'';position:absolute;right:-36px;top:46px;width:110px;height:88px;background:repeating-linear-gradient(to bottom,transparent 0 10px,rgb(255 255 255 / .25) 10px 11px);pointer-events:none}.program h2{color:white}.program .section-heading>p{color:rgb(255 255 255 / .8)}.program-grid{display:grid;gap:44px}.program-group{display:grid;gap:24px;min-width:0;padding:32px 0 0;border-top:1px solid rgb(255 255 255 / .3);background:transparent;box-shadow:none;border-radius:0}.stage-heading{position:relative;padding-left:40px}.stage-number{position:absolute;left:0;top:2px;font-family:var(--title);font-size:16px;line-height:1.5;color:rgb(255 255 255 / .8)}.stage-title{font-family:var(--title);font-size:40px;line-height:1.05;letter-spacing:-.04em;color:white}.stage-subtitle{font-size:18px;line-height:1.5;color:rgb(255 255 255 / .8);margin:10px 0 0}.program-group ul{list-style:none;margin:0;padding:0}.program-group li{margin:0 0 24px;min-width:0}.program-group li:last-child{margin-bottom:0}.program-group li>span{display:block;font-family:var(--title);font-size:18px;font-weight:500;line-height:1.5;color:white;overflow-wrap:anywhere}.program-group small{display:block;font-size:16px;font-weight:400;color:rgb(255 255 255 / .8);line-height:1.75;margin-top:5px}
+/* Performers are people, not empty profile cards. */
+.artist-grid{display:grid}.artist-card{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:baseline;gap:20px;border-top:1px solid var(--line);padding:25px 0;box-shadow:none;border-radius:0}.artist-role{font-size:16px;color:var(--secondary);margin:0;line-height:1.75}.artist-card h3{font-size:26px;line-height:1.4}.artist-choir{padding-top:8px;padding-bottom:34px;border-top:0}.artist-choir h3{color:var(--blue);font-size:30px}.about{padding-top:0}.about .section-inner{display:grid;gap:28px;border-top:1px solid var(--line);padding-top:56px}.about-copy .lead{font-size:28px;font-weight:650;line-height:1.45;letter-spacing:-.04em;color:var(--blue);margin-bottom:26px}.about-copy p{font-size:16px;line-height:1.95;margin-bottom:22px}.social-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:26px}.social-links a{display:inline-flex;align-items:center;min-height:48px;color:var(--blue)}.social-links a:hover{text-decoration:underline;text-underline-offset:5px}
+/* One decisive ticket moment, with the real pass on display. */
+.mobile-ticket{background:var(--blue);color:white;overflow:hidden}.mobile-ticket h2{color:white}.ticket-feature{display:grid;gap:38px}.mobile-ticket-intro{font-size:18px;line-height:1.8;margin:0 0 26px}.mobile-ticket-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px}.ticket-download{background:white;color:var(--blue);width:100%}.ticket-view{display:inline-flex;align-items:center;min-height:48px;color:white}.ticket-view:hover{text-decoration:underline;text-underline-offset:5px}.mobile-ticket-note{color:rgb(255 255 255 / .8);font-size:16px;line-height:1.8;margin-top:20px;margin-bottom:0}.ticket-art-link{display:block;width:190px;max-width:65%;margin:0 auto;transform:rotate(5deg);transition:transform .3s}.ticket-art-link:hover{transform:rotate(0)}.ticket-art{display:block;width:100%;height:auto}.ticket{padding:64px var(--page);background:white}.ticket h2{margin-bottom:22px}.ticket p{font-size:16px;line-height:1.8}.ticket .button{background:var(--blue);color:white}.ticket .button:hover{background:var(--red)}.ticket-inner{padding:0;box-shadow:none;border-radius:0}.brand{font-size:16px;font-weight:600;color:var(--heading)}footer{max-width:1280px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding:0 var(--page) 32px}footer>div{flex-basis:100%;order:3;border-top:1px solid var(--line);padding-top:24px}footer p{font-size:16px;color:var(--secondary);margin:0 0 8px}footer>a:last-child{display:inline-flex;align-items:center;min-height:48px;color:var(--secondary)}.sponsor{display:flex;align-items:center;gap:16px}.samsung-wordmark{display:block;width:112px;height:auto}.motion-ready{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.65,.3,1)}.motion-ready.is-visible{opacity:1;transform:none}
+@media(max-width:359px){.header-logo{width:196px}.landing-actions{gap:4px 12px}.landing-ticket{padding:12px 16px}.poster-scroll{font-size:16px;gap:8px}}
+@media(max-height:700px) and (max-width:599px){.poster-landing{padding-top:20px}.landing-concert-name{margin-bottom:14px}.landing-logo{height:145px}.landing-scene{gap:16px}.landing-date{font-size:18px;margin-bottom:10px}.landing-venue strong{font-size:20px}.landing-actions{margin-top:14px}.hero-rhythm{margin-top:24px;height:22px}}
+@media(min-width:600px){:root{--page:6%}.artist-grid{grid-template-columns:1fr 1fr;gap:0 32px}.artist-choir{grid-column:1/-1}.ticket-download{width:auto}.ticket-feature{grid-template-columns:1.4fr 1fr;align-items:center;gap:36px}.ticket-art-link{width:240px;max-width:100%;margin:0}.ticket-art-link{justify-self:center}}
+@media(min-width:1000px){:root{--section-title:36px}.header{height:88px}.heading-ko{font-size:22px}.concert-menu{max-height:calc(100dvh - 88px);padding-top:24px;padding-bottom:36px}.concert-menu a{font-size:26px;min-height:64px}.menu-backdrop{top:88px}.poster-landing{padding-top:34px}.landing-concert-name{text-align:left;font-size:18px;margin-bottom:32px}.landing-scene{grid-template-columns:1.15fr 1fr;align-items:center;gap:9%}.landing-logo{width:100%;height:400px;max-height:none;margin:0}.landing-invitation{display:block;font-size:42px;font-weight:650;line-height:1.25;letter-spacing:-.045em;margin-bottom:30px}.landing-event{text-align:left}.landing-date{font-size:24px;margin-bottom:18px}.landing-venue strong{font-size:24px}.landing-actions{justify-content:flex-start;gap:10px 24px;margin-top:28px}.hero-rhythm{margin-top:52px;height:44px;transform:translateX(48%)}.section{padding-top:96px;padding-bottom:96px}.section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:32px;margin-bottom:44px}.section-heading h2{margin:0}.visit .section-inner{grid-template-columns:1fr 1fr;gap:10%;align-items:start}.summary-date{font-size:28px}.venue-name{font-size:26px}.visit-details dl>div:first-child{padding-top:0;border-top:0}.program:before{width:200px;height:140px;top:70px}.program-grid{gap:48px}.program-group{grid-template-columns:1fr 1.65fr;column-gap:12%;padding-top:40px}.stage-heading{padding-left:48px}.stage-title{font-size:48px}.program-group ul{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;align-content:start}.program-group li{margin-bottom:0}.artist-grid{grid-template-columns:1fr 1fr;gap:0 56px}.artist-choir{grid-template-columns:120px minmax(0,1fr);padding-bottom:38px}.artist-choir h3{font-size:40px}.artist-card:not(.artist-choir){grid-template-columns:90px minmax(0,1fr);padding:30px 0}.artist-card h3{font-size:30px}.artist-choir h3{font-size:40px}.about{padding-top:0}.about .section-inner{grid-template-columns:1fr 1.6fr;gap:10%;padding-top:64px}.about-copy .lead{font-size:38px}.ticket-feature{grid-template-columns:1.3fr 1fr;gap:12%}.ticket-art-link{width:285px}.mobile-ticket-intro{font-size:22px}.ticket{padding-top:72px;padding-bottom:72px}.ticket-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:10%;align-items:start}.ticket h2{grid-row:1/3}.ticket .button{justify-self:start}footer{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.motion-ready{opacity:1!important;transform:none!important}.ticket-art-link{transform:none}}
 /* Standalone responsive ticket viewer: preserve the original aspect ratio. */
 .ticket-page { min-width: 0; background: var(--white); }
 .ticket-toolbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; max-width: none; height: auto; min-height: 80px; margin: 0; padding: 12px max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left)); background: rgb(255 255 255 / .96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
