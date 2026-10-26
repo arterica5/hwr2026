@@ -1,3 +1,8 @@
+
+/* Samsung Sharp Sans supplied by the user; Korean falls back to Pretendard. */
+@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans-medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Samsung Sharp Sans';src:url('assets/fonts/samsungsharpsans-bold.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
 /* Pretendard v1.3.9 — SIL Open Font License, assets/fonts/OFL.txt */
 @font-face{font-family:'Pretendard Variable';src:url('assets/fonts/PretendardVariable.woff2') format('woff2');font-weight:45 920;font-style:normal;font-display:swap}
 :root{
@@ -25,3 +30,9 @@
 h2 { color: var(--blue); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
 .heading-en { font-size: 18px; font-weight: 500; line-height: 1.5; letter-spacing: -.015em; }
 @media (min-width: 1000px) { .heading-en { font-size: 24px; } }
+
+:root{--title:'Samsung Sharp Sans','Pretendard Variable',Pretendard,sans-serif}
+h1,h2,h3,.heading-en,.program-group li>span,dt{font-family:var(--title)}
+h1,h2,h3{font-weight:700}
+.program-group li>span{font-weight:500}
+.heading-en{font-weight:500}
