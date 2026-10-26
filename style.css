@@ -75,3 +75,5 @@ h2 { gap: 6px 12px; }
 
 .landing-concert-name { margin: 0 0 20px; color: var(--white); font-size: 16px; font-weight: 500; line-height: 1.6; text-align: center; letter-spacing: -.025em; }
 @media (min-width: 1000px) { .landing-concert-name { font-size: 18px; margin-bottom: 24px; } }
+
+@media (min-width: 1000px) { .artist-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
