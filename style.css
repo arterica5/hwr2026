@@ -77,3 +77,15 @@ h2 { gap: 6px 12px; }
 @media (min-width: 1000px) { .landing-concert-name { font-size: 18px; margin-bottom: 24px; } }
 
 @media (min-width: 1000px) { .artist-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* HEAR / WE / GO: three open chapters, without card chrome. */
+.program-grid { gap: 52px; }
+.program-group { padding: 0; border-radius: 0; box-shadow: none; background: transparent; }
+.stage-heading { margin-bottom: 26px; }
+.stage-number { display: block; margin-bottom: 12px; color: var(--secondary); font-size: 16px; line-height: 1.5; font-weight: 500; }
+.stage-title { font-family: var(--title); color: var(--blue); font-size: 52px; font-weight: 700; line-height: 1.05; letter-spacing: -.04em; }
+.stage-subtitle { margin: 12px 0 0; color: var(--secondary); font-size: 18px; line-height: 1.5; font-weight: 400; letter-spacing: -.015em; }
+.program-group li { padding: 0; border: 0; margin: 0 0 24px; }
+.program-group li:last-child { margin-bottom: 0; }
+.program-group small { margin-top: 5px; }
+@media (min-width: 1000px) { .program-grid { gap: 40px; } .stage-title { font-size: 60px; } .stage-heading { margin-bottom: 32px; } }
