@@ -47,3 +47,28 @@ h2 { gap: 6px 12px; }
 /* Give the first content heading breathing room below the poster. */
 #visit { padding-top: 56px; }
 @media (min-width: 1000px) { #visit { padding-top: 80px; } }
+
+/* A compact opening: original central artwork, live date and venue. */
+.poster-landing { padding: 28px 24px 12px; }
+.landing-logo { display: block; width: auto; max-width: 100%; height: clamp(180px, 30svh, 270px); object-fit: contain; }
+.landing-event { color: var(--white); text-align: center; margin-top: 20px; }
+.landing-date { margin: 0 0 14px; font-size: 20px; line-height: 1.5; font-weight: 500; letter-spacing: -.025em; }
+.landing-date strong { display: block; font-size: 26px; font-weight: 650; }
+.landing-venue { margin: 0; font-size: 16px; line-height: 1.6; }
+.landing-venue strong { display: block; font-size: 21px; font-weight: 600; letter-spacing: -.025em; }
+.poster-scroll { width: auto; margin-top: 8px; }
+@media (max-height: 700px) and (max-width: 599px) {
+ .poster-landing { padding-top: 20px; }
+ .landing-logo { height: 145px; }
+ .landing-event { margin-top: 14px; }
+ .landing-date { font-size: 18px; margin-bottom: 10px; }
+ .landing-date strong { font-size: 23px; }
+ .landing-venue strong { font-size: 20px; }
+}
+@media (min-width: 1000px) {
+ .poster-landing { padding-top: 36px; padding-bottom: 20px; }
+ .landing-logo { height: 290px; }
+ .landing-date { font-size: 24px; }
+ .landing-date strong { display: inline; font-size: 24px; margin-left: 12px; }
+ .landing-venue strong { font-size: 24px; }
+}
