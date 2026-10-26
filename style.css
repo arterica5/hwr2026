@@ -43,3 +43,7 @@ h2 { gap: 6px 12px; }
 .heading-en { font-size: inherit; font-weight: 700; line-height: inherit; }
 .heading-ko { font-family: var(--body); font-size: 18px; font-weight: 500; line-height: 1.5; letter-spacing: -.025em; }
 @media (min-width: 1000px) { :root { --section-title: 36px; } .heading-ko { font-size: 22px; } }
+
+/* Give the first content heading breathing room below the poster. */
+#visit { padding-top: 56px; }
+@media (min-width: 1000px) { #visit { padding-top: 80px; } }
