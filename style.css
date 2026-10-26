@@ -154,3 +154,15 @@ footer { padding-top: 36px; background: var(--white); }
 .visit-details dt { display: flex; align-items: center; gap: 10px; }
 .stage-title { font-size: 40px; }
 @media (min-width: 1000px) { .stage-title { font-size: 48px; } }
+
+/* Standalone responsive ticket viewer: preserve the original aspect ratio. */
+.ticket-page { min-width: 0; background: var(--white); }
+.ticket-toolbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; max-width: none; height: auto; min-height: 80px; margin: 0; padding: 12px max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left)); background: rgb(255 255 255 / .96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+.ticket-home { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; font-size: 16px; color: var(--text); white-space: nowrap; }
+.ticket-toolbar .button { gap: 8px; min-height: 48px; padding: 12px 16px; white-space: nowrap; }
+.ticket-viewer { width: 100%; max-width: 608px; margin: 0 auto; padding: 28px 16px 32px; }
+.ticket-viewer h1 { font-family: var(--body); font-size: 24px; line-height: 1.35; margin: 0 0 10px; }
+.ticket-viewer-description { color: var(--secondary); font-size: 16px; line-height: 1.75; margin: 0 0 24px; }
+.responsive-ticket { display: block; width: 100%; max-width: 100%; height: auto; }
+.ticket-save-help { margin: 24px 0 0; color: var(--secondary); font-size: 16px; line-height: 1.75; }
+@media (min-width: 1000px) { .ticket-toolbar { padding-left: 6%; padding-right: 6%; } .ticket-viewer { padding-top: 36px; } }
