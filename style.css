@@ -33,3 +33,21 @@
 .responsive-ticket { display: block; width: 100%; max-width: 100%; height: auto; }
 .ticket-save-help { margin: 24px 0 0; color: var(--secondary); font-size: 16px; line-height: 1.75; }
 @media (min-width: 1000px) { .ticket-toolbar { padding-left: 6%; padding-right: 6%; } .ticket-viewer { padding-top: 36px; } }
+
+/* Keep the opening artwork below the real mobile header height. */
+:root { --header-height: 80px; }
+html { scroll-padding-top: calc(var(--header-height) + 24px); }
+.concert-menu { max-height: calc(100vh - var(--header-height)); max-height: calc(100dvh - var(--header-height)); }
+.menu-backdrop { inset-block-start: var(--header-height); }
+@media (max-width: 999px) {
+ .header { height: auto; min-height: 80px; padding-top: max(12px, env(safe-area-inset-top)); }
+ .concert-brand { flex: 1; }
+ .poster-landing { padding-top: 32px; }
+ .landing-logo { width: min(100%, 300px); height: auto; max-height: 300px; aspect-ratio: 390 / 385; margin: 8px auto 0; }
+ .landing-scene { min-width: 0; }
+}
+@media (max-height: 700px) and (max-width: 599px) {
+ .poster-landing { padding-top: 24px; }
+ .landing-logo { width: min(100%, 180px); height: auto; max-height: none; }
+}
+@media (min-width: 1000px) { :root { --header-height: 88px; } }

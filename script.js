@@ -53,3 +53,12 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
     }
   });
 }
+
+// Font loading, text wrapping and safe areas can change the header's real height.
+const siteHeader = document.querySelector('.header');
+function syncHeaderHeight() {
+  document.documentElement.style.setProperty('--header-height', `${Math.ceil(siteHeader.getBoundingClientRect().height)}px`);
+}
+syncHeaderHeight();
+if ('ResizeObserver' in window) new ResizeObserver(syncHeaderHeight).observe(siteHeader);
+else window.addEventListener('resize', syncHeaderHeight);
