@@ -65,3 +65,9 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) {
  backdrop-filter: none;
 }
 html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle > span { background: var(--white); }
+
+/* A straight ticket is easier to read on a phone; larger layouts keep the poster-like tilt. */
+@media (max-width: 599px) {
+ .ticket-art-link,
+ .ticket-art-link:hover { transform: none; }
+}

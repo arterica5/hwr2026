@@ -67,9 +67,11 @@ else window.addEventListener('resize', syncHeaderHeight);
 
 // Keep the opening poster uncluttered; show the header identity after scrolling.
 const headerBrand = document.querySelector('.header .concert-brand');
+const themeColor = document.querySelector('meta[name="theme-color"]');
 function syncScrollBrand() {
   const visible = window.scrollY > 32 || menuToggle.getAttribute('aria-expanded') === 'true';
   siteHeader.classList.toggle('is-scrolled', window.scrollY > 32);
+  if (themeColor) themeColor.setAttribute('content', visible ? '#FFFFFF' : '#03329C');
   if (visible) {
     headerBrand.removeAttribute('aria-hidden');
     headerBrand.removeAttribute('tabindex');
