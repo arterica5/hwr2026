@@ -71,3 +71,19 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
  .ticket-art-link,
  .ticket-art-link:hover { transform: none; }
 }
+
+/* Brand-colored navigation panel. */
+.concert-menu {
+ background: var(--blue);
+ box-shadow: 0 22px 42px rgb(3 50 156 / .24);
+}
+.concert-menu a {
+ color: var(--white);
+ border-top: 1px solid rgb(255 255 255 / .2);
+}
+.concert-menu a:first-child { border-top: 0; }
+.concert-menu a > span { color: rgb(255 255 255 / .68); }
+.concert-menu a:hover,
+.concert-menu a:active,
+.concert-menu a:hover > span,
+.concert-menu a:active > span { color: var(--red); }
