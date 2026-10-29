@@ -85,3 +85,28 @@ window.addEventListener('pageshow', syncScrollBrand);
 menuToggle.addEventListener('click', syncScrollBrand);
 new MutationObserver(syncScrollBrand).observe(menuToggle, { attributes: true, attributeFilter: ['aria-expanded'] });
 syncScrollBrand();
+
+// Count production visits with Vercel Web Analytics; no visitor data is shown publicly.
+if (location.protocol === 'https:' && !document.querySelector('script[src="/_vercel/insights/script.js"]')) {
+  const analyticsScript = document.createElement('script');
+  analyticsScript.src = '/_vercel/insights/script.js';
+  analyticsScript.defer = true;
+  document.head.appendChild(analyticsScript);
+}
+
+// Private shortcut: tap the footer SAMSUNG wordmark five times to open the owner dashboard.
+const sponsorWordmark = document.querySelector('.samsung-wordmark');
+if (sponsorWordmark) {
+  let statsTapCount = 0;
+  let statsTapTimer;
+  sponsorWordmark.addEventListener('click', () => {
+    window.clearTimeout(statsTapTimer);
+    statsTapCount += 1;
+    if (statsTapCount === 5) {
+      statsTapCount = 0;
+      window.location.href = 'https://vercel.com/dashboard';
+      return;
+    }
+    statsTapTimer = window.setTimeout(() => { statsTapCount = 0; }, 2500);
+  });
+}
