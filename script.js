@@ -94,9 +94,24 @@ if (location.protocol === 'https:' && !document.querySelector('script[src="/_ver
   document.head.appendChild(analyticsScript);
 }
 
-// Private shortcut: tap the footer SAMSUNG wordmark five times to open the owner dashboard.
+// Hidden visit counter: tap the footer SAMSUNG wordmark five times to reveal it.
 const sponsorWordmark = document.querySelector('.samsung-wordmark');
 if (sponsorWordmark) {
+  const statsDialog = document.createElement('dialog');
+  statsDialog.className = 'stats-dialog';
+  statsDialog.setAttribute('aria-labelledby', 'stats-dialog-title');
+  statsDialog.innerHTML = `
+    <button class="stats-dialog-close" type="button" aria-label="닫기">×</button>
+    <p class="stats-dialog-kicker">HEAR WE GO!</p>
+    <h2 id="stats-dialog-title">누적 방문</h2>
+    <img class="stats-visitor-badge" src="https://api.visitorbadge.io/api/visitors?path=hanwoori2026.vercel.app&amp;label=VISITS&amp;labelColor=%2303329C&amp;countColor=%23FF453A" alt="누적 방문 횟수" width="120" height="28">
+    <p class="stats-dialog-note">페이지가 열린 횟수를 기준으로 집계합니다.</p>`;
+  document.body.appendChild(statsDialog);
+  statsDialog.querySelector('.stats-dialog-close').addEventListener('click', () => statsDialog.close());
+  statsDialog.addEventListener('click', event => {
+    if (event.target === statsDialog) statsDialog.close();
+  });
+
   let statsTapCount = 0;
   let statsTapTimer;
   sponsorWordmark.addEventListener('click', () => {
@@ -104,7 +119,7 @@ if (sponsorWordmark) {
     statsTapCount += 1;
     if (statsTapCount === 5) {
       statsTapCount = 0;
-      window.location.href = 'https://vercel.com/dashboard';
+      statsDialog.showModal();
       return;
     }
     statsTapTimer = window.setTimeout(() => { statsTapCount = 0; }, 2500);
