@@ -125,3 +125,58 @@ if (sponsorWordmark) {
     statsTapTimer = window.setTimeout(() => { statsTapCount = 0; }, 2500);
   });
 }
+
+// “꽃보다 기부” opens only on request; the native dialog provides focus trapping and ESC support.
+const donationFab = document.createElement('button');
+donationFab.className = 'donation-fab';
+donationFab.type = 'button';
+donationFab.setAttribute('aria-haspopup', 'dialog');
+donationFab.setAttribute('aria-controls', 'donation-dialog');
+donationFab.innerHTML = '<span aria-hidden="true">🌷</span><span>꽃보다 기부</span>';
+
+const donationDialog = document.createElement('dialog');
+donationDialog.id = 'donation-dialog';
+donationDialog.className = 'donation-dialog';
+donationDialog.setAttribute('aria-labelledby', 'donation-dialog-title');
+donationDialog.setAttribute('aria-describedby', 'donation-dialog-description');
+donationDialog.innerHTML = `
+  <div class="donation-sheet">
+    <button class="donation-dialog-close" type="button" aria-label="꽃보다 기부 안내 닫기">×</button>
+    <p class="donation-kicker">꽃보다 기부</p>
+    <h2 id="donation-dialog-title">꽃다발 대신,<br>따뜻한 마음을 전해주세요.</h2>
+    <p id="donation-dialog-description" class="donation-lead">무대 위 단원에게 전하는 축하와 응원의 마음을 기부로 나눠보세요.</p>
+    <div class="donation-details">
+      <section>
+        <h3>참여 방법</h3>
+        <p>공연 당일 로비의 <strong>‘꽃보다 기부’ 코너</strong>에서 축하하고 싶은 단원의 이름으로 기부할 수 있습니다.</p>
+      </section>
+      <section>
+        <h3>기부금 사용처</h3>
+        <p>삼성서울병원 희귀난치병 환우</p>
+      </section>
+    </div>
+    <button class="donation-dialog-confirm" type="button">확인</button>
+  </div>`;
+document.body.append(donationFab, donationDialog);
+
+const donationCloseButton = donationDialog.querySelector('.donation-dialog-close');
+const donationConfirmButton = donationDialog.querySelector('.donation-dialog-confirm');
+let donationReturnFocus = null;
+function closeDonationDialog() {
+  if (donationDialog.open) donationDialog.close();
+}
+donationFab.addEventListener('click', () => {
+  donationReturnFocus = document.activeElement;
+  donationDialog.showModal();
+  donationCloseButton.focus();
+});
+donationCloseButton.addEventListener('click', closeDonationDialog);
+donationConfirmButton.addEventListener('click', closeDonationDialog);
+donationDialog.addEventListener('click', event => {
+  const bounds = donationDialog.getBoundingClientRect();
+  const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
+  if (outside) closeDonationDialog();
+});
+donationDialog.addEventListener('close', () => {
+  if (donationReturnFocus instanceof HTMLElement) donationReturnFocus.focus({ preventScroll: true });
+});

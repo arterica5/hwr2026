@@ -105,3 +105,60 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
 .stats-dialog h2 { display: block; margin: 0 0 22px; color: var(--blue); font-family: var(--body); font-size: 26px; }
 .stats-visitor-badge { display: block; width: auto; height: 28px; margin: 0 auto; }
 .stats-dialog-note { margin: 18px 0 0; color: var(--secondary); font-size: 14px; line-height: 1.6; }
+
+/* “꽃보다 기부” campaign: a fixed invitation and an on-demand accessible dialog. */
+.donation-fab {
+ position: fixed;
+ right: max(18px, env(safe-area-inset-right));
+ bottom: max(18px, env(safe-area-inset-bottom));
+ z-index: 29;
+ display: inline-flex;
+ align-items: center;
+ gap: 9px;
+ min-height: 52px;
+ padding: 12px 18px;
+ color: var(--white);
+ font-size: 16px;
+ font-weight: 650;
+ letter-spacing: -.02em;
+ background: var(--red);
+ border: 0;
+ border-radius: 999px;
+ box-shadow: 0 12px 34px rgb(0 0 0 / .22);
+ transition: transform .2s ease, box-shadow .2s ease;
+}
+.donation-fab:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgb(0 0 0 / .26); }
+.donation-fab > span:first-child { font-size: 20px; line-height: 1; }
+.donation-dialog {
+ width: min(calc(100% - 40px), 560px);
+ max-width: 560px;
+ max-height: calc(100dvh - 40px);
+ padding: 0;
+ color: var(--text);
+ background: var(--white);
+ border: 0;
+ border-radius: 24px;
+ box-shadow: 0 28px 90px rgb(0 0 0 / .28);
+ overflow: auto;
+}
+.donation-dialog::backdrop { background: rgb(3 50 156 / .64); backdrop-filter: blur(8px); }
+.donation-sheet { position: relative; padding: 44px 38px 36px; }
+.donation-dialog-close { position: absolute; top: 12px; right: 14px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; color: var(--secondary); font-size: 30px; line-height: 1; background: transparent; border: 0; border-radius: 50%; }
+.donation-dialog-close:hover { color: var(--blue); background: rgb(3 50 156 / .07); }
+.donation-kicker { margin: 0 0 12px; color: var(--red); font-size: 16px; font-weight: 700; }
+.donation-dialog h2 { display: block; margin: 0 48px 20px 0; color: var(--blue); font-family: var(--body); font-size: clamp(28px, 5vw, 38px); line-height: 1.3; letter-spacing: -.045em; }
+.donation-lead { margin: 0 0 28px; color: var(--text); font-size: 18px; line-height: 1.75; }
+.donation-details { border-top: 1px solid var(--line); }
+.donation-details section { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.donation-details h3 { margin: 0 0 7px; color: var(--heading); font-family: var(--body); font-size: 17px; letter-spacing: -.025em; }
+.donation-details p { margin: 0; color: var(--text); font-size: 16px; line-height: 1.75; }
+.donation-details strong { color: var(--blue); font-weight: 650; }
+.donation-dialog-confirm { width: 100%; min-height: 52px; margin-top: 26px; padding: 12px 20px; color: var(--white); font-weight: 650; background: var(--blue); border: 0; }
+.donation-dialog-confirm:hover { background: var(--red); }
+@media (max-width: 599px) {
+ .donation-fab { right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); min-height: 50px; padding: 11px 16px; }
+ .donation-dialog { width: 100%; max-width: none; max-height: calc(100dvh - 16px); margin: auto 0 0; border-radius: 24px 24px 0 0; }
+ .donation-sheet { padding: 38px 24px max(24px, env(safe-area-inset-bottom)); }
+ .donation-dialog h2 { margin-right: 36px; font-size: 29px; }
+ .donation-lead { font-size: 17px; }
+}
