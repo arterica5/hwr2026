@@ -140,13 +140,14 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
  background: var(--red);
  border: 0;
  border-radius: 999px;
- border: 2px solid var(--white);
- box-shadow: 0 12px 34px rgb(0 0 0 / .24), 0 0 0 4px rgb(255 69 58 / .18);
+ border: 0;
+ box-shadow: 0 12px 34px rgb(0 0 0 / .24), 0 0 0 4px rgb(255 69 58 / .16);
  transition: transform .2s ease, box-shadow .2s ease;
  animation: donation-fab-arrive .55s cubic-bezier(.2,.75,.3,1) .45s both;
 }
 .donation-fab:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgb(0 0 0 / .28), 0 0 0 5px rgb(255 69 58 / .2); }
-.donation-fab-icon { display: grid; place-items: center; flex: 0 0 42px; width: 42px; height: 42px; color: var(--red); font-size: 23px; line-height: 1; background: var(--white); border-radius: 50%; }
+.donation-fab-icon { display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 42px; color: var(--white); line-height: 1; }
+.donation-fab-icon svg { display: block; width: 31px; height: 31px; overflow: visible; }
 .donation-fab-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; line-height: 1.25; }
 .donation-fab-copy strong { font-size: 16px; font-weight: 750; }
 .donation-fab-copy small { color: rgb(255 255 255 / .82); font-size: 12px; font-weight: 500; letter-spacing: -.02em; }
@@ -180,7 +181,8 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
 .donation-dialog-confirm:hover { background: var(--red); }
 @media (max-width: 599px) {
  .donation-fab { right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); min-height: 60px; padding: 7px 12px 7px 8px; }
- .donation-fab-icon { flex-basis: 40px; width: 40px; height: 40px; font-size: 21px; }
+ .donation-fab-icon { flex-basis: 34px; width: 34px; height: 40px; }
+ .donation-fab-icon svg { width: 29px; height: 29px; }
  .donation-fab-arrow { display: none; }
  .donation-dialog { width: 100%; max-width: none; max-height: calc(100dvh - 16px); margin: auto 0 0; border-radius: 24px 24px 0 0; }
  .donation-sheet { padding: 38px 24px max(24px, env(safe-area-inset-bottom)); }
