@@ -106,6 +106,22 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
 .stats-visitor-badge { display: block; width: auto; height: 28px; margin: 0 auto; }
 .stats-dialog-note { margin: 18px 0 0; color: var(--secondary); font-size: 14px; line-height: 1.6; }
 
+/* FAQ: simple editorial rows, with native disclosure behavior. */
+.faq { background: var(--white); }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 72px; padding: 18px 0; color: var(--heading); font-size: 18px; font-weight: 600; line-height: 1.55; cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-toggle { display: grid; place-items: center; flex: 0 0 32px; width: 32px; height: 32px; color: var(--blue); font-family: var(--title); font-size: 25px; font-weight: 400; transition: transform .2s ease, color .2s ease; }
+.faq-item[open] .faq-toggle { color: var(--red); transform: rotate(45deg); }
+.faq-item > p { max-width: 760px; margin: -2px 54px 24px 0; color: var(--text); font-size: 16px; line-height: 1.85; }
+.faq-item summary:hover { color: var(--blue); }
+@media (min-width: 1000px) {
+ .faq .section-inner { display: grid; grid-template-columns: .72fr 1.5fr; gap: 10%; align-items: start; }
+ .faq .section-heading { display: block; position: sticky; top: calc(var(--header-height) + 40px); margin: 0; }
+ .faq .section-heading h2 { margin-bottom: 14px; }
+}
+
 /* “꽃보다 기부” campaign: a fixed invitation and an on-demand accessible dialog. */
 .donation-fab {
  position: fixed;
@@ -114,9 +130,9 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
  z-index: 29;
  display: inline-flex;
  align-items: center;
- gap: 9px;
- min-height: 52px;
- padding: 12px 18px;
+ gap: 11px;
+ min-height: 64px;
+ padding: 9px 14px 9px 10px;
  color: var(--white);
  font-size: 16px;
  font-weight: 650;
@@ -124,11 +140,18 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
  background: var(--red);
  border: 0;
  border-radius: 999px;
- box-shadow: 0 12px 34px rgb(0 0 0 / .22);
+ border: 2px solid var(--white);
+ box-shadow: 0 12px 34px rgb(0 0 0 / .24), 0 0 0 4px rgb(255 69 58 / .18);
  transition: transform .2s ease, box-shadow .2s ease;
+ animation: donation-fab-arrive .55s cubic-bezier(.2,.75,.3,1) .45s both;
 }
-.donation-fab:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgb(0 0 0 / .26); }
-.donation-fab > span:first-child { font-size: 20px; line-height: 1; }
+.donation-fab:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgb(0 0 0 / .28), 0 0 0 5px rgb(255 69 58 / .2); }
+.donation-fab-icon { display: grid; place-items: center; flex: 0 0 42px; width: 42px; height: 42px; color: var(--red); font-size: 23px; line-height: 1; background: var(--white); border-radius: 50%; }
+.donation-fab-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; line-height: 1.25; }
+.donation-fab-copy strong { font-size: 16px; font-weight: 750; }
+.donation-fab-copy small { color: rgb(255 255 255 / .82); font-size: 12px; font-weight: 500; letter-spacing: -.02em; }
+.donation-fab-arrow { margin-left: 2px; color: rgb(255 255 255 / .8); font-size: 16px; }
+@keyframes donation-fab-arrive { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
 .donation-dialog {
  width: min(calc(100% - 40px), 560px);
  max-width: 560px;
@@ -156,7 +179,9 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
 .donation-dialog-confirm { width: 100%; min-height: 52px; margin-top: 26px; padding: 12px 20px; color: var(--white); font-weight: 650; background: var(--blue); border: 0; }
 .donation-dialog-confirm:hover { background: var(--red); }
 @media (max-width: 599px) {
- .donation-fab { right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); min-height: 50px; padding: 11px 16px; }
+ .donation-fab { right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); min-height: 60px; padding: 7px 12px 7px 8px; }
+ .donation-fab-icon { flex-basis: 40px; width: 40px; height: 40px; font-size: 21px; }
+ .donation-fab-arrow { display: none; }
  .donation-dialog { width: 100%; max-width: none; max-height: calc(100dvh - 16px); margin: auto 0 0; border-radius: 24px 24px 0 0; }
  .donation-sheet { padding: 38px 24px max(24px, env(safe-area-inset-bottom)); }
  .donation-dialog h2 { margin-right: 36px; font-size: 29px; }

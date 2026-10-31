@@ -1,6 +1,41 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const concertMenu = document.querySelector('#concert-menu');
 const menuBackdrop = document.querySelector('.menu-backdrop');
+
+// Frequently asked questions sit close to the ticket and contact information.
+const faqSection = document.createElement('section');
+faqSection.id = 'faq';
+faqSection.className = 'faq section';
+faqSection.setAttribute('aria-labelledby', 'faq-heading');
+faqSection.innerHTML = `
+  <div class="section-inner">
+    <div class="section-heading">
+      <div><h2 id="faq-heading"><span class="heading-en" lang="en">FAQ</span> <span class="heading-ko">자주 묻는 질문</span></h2></div>
+      <p>공연 관람 전 확인해 주세요.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary><span>티켓 가격은 얼마인가요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>본 공연은 무료입니다. 모바일 초대권을 저장한 후 공연 당일 박스오피스에서 좌석권을 받아주세요.</p></details>
+      <details class="faq-item"><summary><span>모바일 초대권은 어떻게 사용하나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>공연 안내 사이트에서 모바일 초대권을 휴대폰에 저장해 주세요. 공연 당일 박스오피스에서 초대권을 보여주시면 좌석권으로 교환해 드립니다.</p></details>
+      <details class="faq-item"><summary><span>초대권 한 장으로 여러 명이 입장할 수 있나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>네. 모바일 초대권 한 장으로 여러 장의 좌석권을 받을 수 있습니다. 함께 방문한 관람객의 좌석권을 박스오피스에서 수령해 주세요.</p></details>
+      <details class="faq-item"><summary><span>좌석은 어떻게 배정되나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>좌석은 공연 당일 박스오피스에서 배정됩니다. 수령한 좌석권에 표시된 좌석에서 관람해 주세요.</p></details>
+      <details class="faq-item"><summary><span>공연장에는 언제까지 도착해야 하나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>원활한 좌석권 수령과 입장을 위해 공연 시작 30분 전까지 도착해 주세요. 공연은 오후 4시에 시작합니다.</p></details>
+      <details class="faq-item"><summary><span>관람 가능한 연령은 어떻게 되나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>초등학생 이상 관람할 수 있습니다. 미취학 아동은 입장이 어렵습니다.</p></details>
+      <details class="faq-item"><summary><span>주차할 수 있나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>삼성전자 인재개발원 내 주차장을 이용할 수 있습니다. 공연 당일 혼잡할 수 있으니 여유 있게 도착해 주세요.</p></details>
+      <details class="faq-item"><summary><span>셔틀버스는 어디서 출발하나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>양재역 9번 출구에서 오후 2시, 영통역 1번 출구에서 오후 3시와 오후 3시 30분에 출발합니다.</p></details>
+      <details class="faq-item"><summary><span>대중교통으로 어떻게 방문하나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>망포역 1번 출구에서 8번 버스 또는 영통역 1번 출구에서 55번 마을버스를 이용해 주세요.</p></details>
+      <details class="faq-item"><summary><span>‘꽃보다 기부’는 무엇인가요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>꽃다발 대신 따뜻한 마음을 기부로 전하는 캠페인입니다. 공연 당일 로비의 ‘꽃보다 기부’ 코너에서 축하하고 싶은 단원의 이름으로 참여할 수 있습니다.</p></details>
+      <details class="faq-item"><summary><span>기부는 어떻게 할 수 있나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>공연 당일 ‘꽃보다 기부’ 코너에서 현금 또는 계좌이체로 참여할 수 있습니다.</p></details>
+      <details class="faq-item"><summary><span>기부금은 어디에 사용되나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>모인 기부금은 삼성서울병원 희귀난치병 환우를 위해 사용됩니다.</p></details>
+      <details class="faq-item"><summary><span>공연 관련 문의는 어디로 하면 되나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>카카오톡 채널 ‘삼성한우리합창단’으로 문의해 주세요.</p></details>
+    </div>
+  </div>`;
+document.querySelector('#ticket').before(faqSection);
+const contactMenuLink = concertMenu.querySelector('a[href="#ticket"]');
+const faqMenuLink = document.createElement('a');
+faqMenuLink.href = '#faq';
+faqMenuLink.innerHTML = 'FAQ <span aria-hidden="true">↗</span>';
+contactMenuLink.before(faqMenuLink);
+
 function setMenuOpen(open, restoreFocus = false) {
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
@@ -132,7 +167,7 @@ donationFab.className = 'donation-fab';
 donationFab.type = 'button';
 donationFab.setAttribute('aria-haspopup', 'dialog');
 donationFab.setAttribute('aria-controls', 'donation-dialog');
-donationFab.innerHTML = '<span aria-hidden="true">🌷</span><span>꽃보다 기부</span>';
+donationFab.innerHTML = '<span class="donation-fab-icon" aria-hidden="true">🌷</span><span class="donation-fab-copy"><strong>꽃보다 기부</strong><small>캠페인 참여 안내</small></span><span class="donation-fab-arrow" aria-hidden="true">↗</span>';
 
 const donationDialog = document.createElement('dialog');
 donationDialog.id = 'donation-dialog';
