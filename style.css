@@ -189,3 +189,26 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
  .donation-dialog h2 { margin-right: 36px; font-size: 29px; }
  .donation-lead { font-size: 17px; }
 }
+
+/* Artist biographies use one generous editorial column at every viewport. */
+.artists .artist-grid { grid-template-columns: 1fr; gap: 0; }
+.artists .artist-card,
+.artists .artist-card:not(.artist-choir) { grid-template-columns: 64px minmax(0, 1fr); align-items: start; gap: 20px; padding: 30px 0; }
+.artists .artist-choir { grid-column: auto; padding-top: 8px; padding-bottom: 34px; }
+.artist-content { min-width: 0; max-width: 900px; }
+.artist-content h3 { margin: 0; }
+.artist-bio { margin: 16px 0 0; color: var(--text); font-size: 16px; line-height: 1.85; }
+ul.artist-bio { padding-left: 1.15em; }
+.artist-bio li { padding-left: .2em; margin: 4px 0; }
+.artist-bio li::marker { color: var(--red); }
+.artist-bio p { margin: 0 0 12px; }
+.artist-bio p:last-child { margin-bottom: 0; }
+@media (min-width: 1000px) {
+ .artists .artist-card,
+ .artists .artist-card:not(.artist-choir),
+ .artists .artist-choir { grid-template-columns: 120px minmax(0, 1fr); gap: 42px; padding: 38px 0; }
+ .artists .artist-choir { padding-top: 8px; padding-bottom: 42px; }
+ .artist-content h3 { font-size: 30px; }
+ .artists .artist-choir h3 { font-size: 40px; }
+ .artist-bio { margin-top: 18px; font-size: 17px; line-height: 1.9; }
+}
