@@ -71,7 +71,6 @@ html.has-scroll-brand .header:not(.is-scrolled):not(.is-menu-open) .menu-toggle 
  .ticket-art-link,
  .ticket-art-link:hover { transform: none; }
 }
-
 /* Brand-colored navigation panel. */
 .concert-menu {
  background: var(--blue);
@@ -211,18 +210,4 @@ ul.artist-bio { padding-left: 1.15em; }
  .artist-content h3 { font-size: 30px; }
  .artists .artist-choir h3 { font-size: 40px; }
  .artist-bio { margin-top: 18px; font-size: 17px; line-height: 1.9; }
-}
-
-/* HEAR · WE · GO chapter artwork: one visual movement across three stages. */
-.program-group { position: relative; isolation: isolate; overflow: hidden; padding: 36px 20px; }
-.program-group::before { content: ''; position: absolute; inset: 0; z-index: 0; background-repeat: no-repeat; background-position: right center; background-size: cover; opacity: .2; pointer-events: none; }
-.program-group > * { position: relative; z-index: 1; }
-.program-group:nth-child(1)::before { background-image: url('assets/program-hear.webp'); }
-.program-group:nth-child(2)::before { background-image: url('assets/program-we.webp'); opacity: .16; }
-.program-group:nth-child(3)::before { background-image: url('assets/program-go.webp'); opacity: .24; }
-@media (min-width: 1000px) {
- .program-group { padding: 46px 42px; }
- .program-group::before { background-position: center; opacity: .22; }
- .program-group:nth-child(2)::before { background-position: center; opacity: .17; }
- .program-group:nth-child(3)::before { background-position: center; opacity: .25; }
 }
