@@ -211,3 +211,54 @@ ul.artist-bio { padding-left: 1.15em; }
  .artists .artist-choir h3 { font-size: 40px; }
  .artist-bio { margin-top: 18px; font-size: 17px; line-height: 1.9; }
 }
+
+.shuttle-schedule {
+  display: grid;
+  gap: 16px;
+}
+.shuttle-route {
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.shuttle-route h3 {
+  margin-bottom: 6px;
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.45;
+}
+.shuttle-leg {
+  display: grid;
+  grid-template-columns: 5.125rem minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 12px;
+  padding: 9px 0;
+  line-height: 1.55;
+}
+.shuttle-leg + .shuttle-leg {
+  border-top: 1px solid var(--line);
+  padding-bottom: 0;
+}
+.shuttle-direction {
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 0.875rem;
+  text-align: center;
+}
+.shuttle-direction-return {
+  background: #e9edf5;
+  color: var(--blue);
+}
+.shuttle-leg p {
+  margin: 0;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.shuttle-leg time {
+  color: var(--heading);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
