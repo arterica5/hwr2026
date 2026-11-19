@@ -21,7 +21,7 @@ faqSection.innerHTML = `
       <details class="faq-item"><summary><span>공연장에는 언제까지 도착해야 하나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>원활한 좌석권 수령과 입장을 위해 공연 시작 30분 전까지 도착해 주세요. 공연은 오후 4시에 시작합니다.</p></details>
       <details class="faq-item"><summary><span>관람 가능한 연령은 어떻게 되나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>초등학생 이상 관람할 수 있습니다. 미취학 아동은 입장이 어렵습니다.</p></details>
       <details class="faq-item"><summary><span>주차할 수 있나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>공연장 내 주차장을 이용할 수 있습니다. 공연 당일 혼잡할 수 있으니 여유 있게 도착해 주세요.</p></details>
-      <details class="faq-item"><summary><span>셔틀버스는 어디서 출발하나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>양재역 9번 출구에서 오후 2시, 영통역 1번 출구에서 오후 3시와 오후 3시 30분에 출발합니다.</p></details>
+      <details class="faq-item"><summary><span>셔틀버스는 어디서 출발하나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>양재역 SC제일은행 앞과 영통 더마레보호텔에서 출발합니다. <a href="#shuttle-schedule">셔틀버스 노선 및 시간표</a>에서 출발 시각과 귀가 노선을 확인해 주세요.</p></details>
       <details class="faq-item"><summary><span>대중교통으로 어떻게 방문하나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>망포역 1번 출구에서 8번 버스 또는 영통역 1번 출구에서 55번 마을버스를 이용해 주세요.</p></details>
       <details class="faq-item"><summary><span>‘꽃보다 기부’는 무엇인가요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>꽃다발 대신 따뜻한 마음을 기부로 전하는 캠페인입니다. 공연 당일 로비의 ‘꽃보다 기부’ 코너에서 축하하고 싶은 단원의 이름으로 참여할 수 있습니다.</p></details>
       <details class="faq-item"><summary><span>기부는 어떻게 할 수 있나요?</span><span class="faq-toggle" aria-hidden="true">+</span></summary><p>공연 당일 ‘꽃보다 기부’ 코너에서 현금 또는 계좌이체로 참여할 수 있습니다.</p></details>
