@@ -262,3 +262,10 @@ ul.artist-bio { padding-left: 1.15em; }
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
+
+.shuttle-map-link {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
